@@ -23,7 +23,7 @@ class SSUtil {
 			}     
 			if ((strtolower($key) != "slideshow") &&  (strtolower($key) != "slideshows") && (strtolower($key) != "slideshowdeleted") && (strtolower($key) != "slideshowuploaded") && (strtolower($key) != "tags")  && (strtolower($key) != "group") && (strtolower($key) != "name") && (strtolower($key) != "count") && (strtolower($key) != "user")) {
                 for($i = 0;$i < count($val);$i++) {
-                      $finarr[$i][$key]=$values[$val[$i]]["value"];
+                      $finarr[$i][$key] = isset($values[$val[$i]]["value"]) ? $values[$val[$i]]["value"] : null;
                 }
 			}
 			else {
@@ -46,7 +46,7 @@ class SSUtil {
 				if(strtolower(substr($key,0,10))=="slideshare")
 					$key=substr($key,11);
 				for($i = 0;$i < count($val);$i++) {
-                      $data[$i][$key]=$values[$val[$i]]["value"];
+                      $data[$i][$key] = isset($values[$val[$i]]["value"]) ? $values[$val[$i]]["value"] : null;
                 }
 			}
 		}
