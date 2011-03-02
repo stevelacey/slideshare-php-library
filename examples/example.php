@@ -1,7 +1,8 @@
 <?php
-include_once 'SSUtil.php';
 
-$apiobj=new SSUtil();
+require_once(dirname(__FILE__).'/../SSUtil.php');
+
+$apiobj = new SSUtil();
 
 echo '#of slides with user variable_orr - '.$apiobj->count_slideUser('variable_orr')."<br/>";
 echo '# of slides in the web 2.0 group - '.$apiobj->count_slideGroup('web-20')."<br/>";
